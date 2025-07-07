@@ -1,4 +1,4 @@
-.footer__ccontainer {
+.footer__container {
   display: flex;
   justify-content: center;
 }
@@ -16,7 +16,6 @@
   line-height: 1;
   font-family: Poppins, sans-serif;
   color: #212121;
-  justify-content: center;
   font-weight: 400;
 }
 
