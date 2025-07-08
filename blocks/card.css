@@ -23,6 +23,10 @@
   opacity: 40%;
 }
 
+.card__like-button:hover {
+  opacity: 100%;
+}
+
 .card__title {
   margin: 0;
   font-weight: 500;

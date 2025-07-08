@@ -19,6 +19,11 @@
   font-family: Poppins, sans-serif;
 }
 
+.profile__add-button:hover {
+  background-color: #212121;
+  opacity: 80%;
+}
+
 .profile__avatar {
   height: 190px;
   width: 190px;
@@ -37,6 +42,12 @@
   font-size: 32px;
   line-height: 1;
   font-family: Popins, sans-serif;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
 }
 
 .profile__description {
@@ -45,6 +56,12 @@
   font-size: 16px;
   line-height: 1;
   font-family: Poppins, sans-serif;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
 }
 
 .profile__edit-button {
@@ -55,6 +72,13 @@
   font-size: 16px;
   line-height: 1;
   font-family: Poppins, sans-serif;
+  width: 107.34px;
+  height: 16px;
+}
+
+.profile__edit-button:hover {
+  background-color: #212121;
+  opacity: 70%;
 }
 
 @media screen and (max-width: 627px) {
@@ -80,6 +104,7 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 1;
+    max-width: 288px;
   }
 
   .profile__column {
@@ -107,5 +132,6 @@
     line-height: 1;
     font-weight: 500;
     margin: 0 0 32px;
+    max-width: 288px;
   }
 }
