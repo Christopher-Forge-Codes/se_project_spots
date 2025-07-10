@@ -14,13 +14,14 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Heart.svg);
+  background-image: url(../images/Like.svg);
   height: 20px;
   width: 23px;
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
   opacity: 40%;
+  cursor: pointer;
 }
 
 .card__like-button:hover {
@@ -34,6 +35,10 @@
   line-height: 1;
   font-family: Poppins, sans-serif;
   line-height: 120%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 353px;
 }
 
 @media screen and (max-width: 627px) {
@@ -44,7 +49,5 @@
 
   .card__title {
     font-size: 16px;
-    line-height: 1;
-    font-weight: 500;
   }
 }

@@ -17,10 +17,10 @@
   font-size: 16px;
   line-height: 1;
   font-family: Poppins, sans-serif;
+  cursor: pointer;
 }
 
 .profile__add-button:hover {
-  background-color: #212121;
   opacity: 80%;
 }
 
@@ -74,10 +74,11 @@
   font-family: Poppins, sans-serif;
   width: 107.34px;
   height: 16px;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
-  opacity: 70%;
+  opacity: 100%;
 }
 
 @media screen and (max-width: 627px) {
@@ -102,7 +103,6 @@
     margin: 0 0 6px;
     font-weight: 500;
     font-size: 20px;
-    line-height: 1;
     max-width: 288px;
   }
 
@@ -115,6 +115,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 1;
+    margin-left:  90.33px;
   }
 
   .profile__add-button {
@@ -127,8 +128,6 @@
   }
 
   .profile__description {
-    font-size: 16px;
-    line-height: 1;
     font-weight: 500;
     margin: 0 0 32px;
     max-width: 288px;
