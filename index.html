@@ -37,7 +37,7 @@
               Senegalese-American singer, record producer, and entrepreneur. An
               influential figure in modern world...
             </p>
-            <button type="button" class="profile__edit-button">
+            <button type="button" class="profile__edit-btn">
               <img src="./images/Pencil.svg" alt="Pencil Icon" />Edit Profile
             </button>
           </div>
@@ -121,10 +121,10 @@
       <footer class="footer">
         <p class="footer__text">2023 © Spots</p>
       </footer>
-      <div class="modal">
-      <div class="modal__container">
+      <div class="modal" id="edit-profile-modal">
+        <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
-          <h2 class="modal__title">Edit Profile</h2>
+          <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
@@ -144,14 +144,12 @@
                 placeholder="Describe yourself"
               />
             </label>
-            <button class="modal__submit-btn" type="submit">
-              Save
-            </button>
+            <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
-       <div class="modal">
-      <div class="modal__container">
+      <div class="modal" id="new-post-modal">
+        <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
           <form class="modal__form">
@@ -161,7 +159,7 @@
                 id="card-image-input"
                 type="url"
                 class="modal__input"
-                placeholder="Paste a link to the picture"
+                placeholder="Past a link to the picture"
               />
             </label>
             <label for="card-caption-input" class="modal__label">
@@ -173,12 +171,11 @@
                 placeholder="Type your caption"
               />
             </label>
-            <button class="modal__submit-btn" type="submit">
-              Save
-            </button>
+            <button class="modal__submit-btn" type="submit">Save</button>
           </form>
         </div>
       </div>
-   </div>
+    </div>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
