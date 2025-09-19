@@ -8,6 +8,7 @@
   
 **Tech-Stack**
 
+*Java Script
 *HTML
 *CSS
 *Media Query
