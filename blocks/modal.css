@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.modal__close-btn {
+.modal__close-btn{
   position: absolute;
   top: 32px;
   right: 50px;
@@ -41,6 +41,11 @@
   border: none;
   cursor: pointer;
   background-image: url(../images/Closeicon.svg);
+}
+
+.modal__close-btn:hover {
+  opacity: 40%;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -67,6 +72,7 @@
   width: 95%;
   padding: 16px;
   border: 1px solid #2121214d;
+  border-radius: 8px;
 }
 
 .modal__input::placeholder {
@@ -84,9 +90,17 @@
   font-size: 16px;
 }
 
-modal___submit-btn:hover {
-  opacity: 80%;
+.modal__submit-btn:hover {
+  opacity: 40%;
+  cursor: pointer;
 }
+
+.modal__close-btn:hover {
+  opacity: 40%;
+  cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 320px) and (max-height: 604px) {
   .modal__title {
@@ -110,5 +124,10 @@ modal___submit-btn:hover {
 
   .modal__container {
     max-width: none;
+  }
+
+  .modal__form {
+    padding: 12px;
+
   }
 }
