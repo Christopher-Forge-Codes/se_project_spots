@@ -16,11 +16,11 @@ const newPostImageLink = newPostModal.querySelector("#card-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 function openModal(modal) {
-  modal.classList.add("modal__is-opened");
+  modal.classList.add("modal_is-opened");
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal__is-opened");
+  modal.classList.remove("modal_is-opened");
 } 
 
 editProfileBtn.addEventListener("click", function () {
