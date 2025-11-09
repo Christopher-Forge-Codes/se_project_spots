@@ -24,8 +24,8 @@ function closeModal(modal) {
 } 
 
 editProfileBtn.addEventListener("click", function () {
-    editProfileNameInput.value = profileNameEl.textContent;
-    editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+    editProfileNameInput.value = profileNameEl.textContent.trim();
+    editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
     openModal(editProfileModal);
 });
 
@@ -43,8 +43,8 @@ newPostCloseBtn.addEventListener("click", function () {
 
 function handleEditProfileSubmit(evt) {
     evt.preventDefault();
-    profileNameEl.textContent = editProfileNameInput.value;
-    profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+    profileNameEl.textContent = editProfileNameInput.value.trim();
+    profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
     closeModal(editProfileModal);
 }
 
