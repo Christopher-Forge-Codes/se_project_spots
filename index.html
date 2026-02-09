@@ -17,8 +17,11 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo(1).svg" alt="Spot__Logo" class="header__logo" />
-        <nav class="header__nav"></nav>
+        <img src="./images/Logo(1).svg" 
+            alt="Spot__Logo" 
+            class="header__logo" />
+        <nav class="header__nav">
+        </nav>
       </header>
       <main class="content">
         <section class="profile page__section">
@@ -35,83 +38,37 @@
               Civil Aviator
             </p>
             <button type="button" class="profile__edit-btn">
-              <img src="./images/Pencil.svg" alt="Pencil Icon" />Edit Profile
+              <img src="./images/Pencil.svg" 
+                  alt="Pencil Icon" />Edit Profile
             </button>
           </div>
           <button type="button" class="profile__add-button">
-            <img src="./images/Plus.svg" alt="Plus Icon" />    New Post
+            <img src="./images/Plus.svg" 
+                  alt="Plus Icon" />    New Post
           </button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
+            <template id="card-template">
+              <li class="card">
+              <button 
+                class="card__delete-button"
+                type="button">
+              </button>
+               <img class="card__image"
+                src="#"
+                alt="#"
+                />
+                <div class=" card__footer">
+                  <h2 class="card__title"></h2>
+                  <button
+                  aria-label="Like Card"
+                  class="card__like-button"
+                  type="button"> 
+                </button>
               </div>
-            </li>
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant terrace"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant terrace</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An outdoor cafe"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An outdoor cafe</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A very long bridge, over the forest..."
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">
-                  A very long bridge, over the forest...
-                </h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel with morning light</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./spots-images/spots-images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain house</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -145,34 +102,21 @@
           </form>
         </div>
       </div>
-      <div class="modal" id="new-post-modal">
-        <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
-          <h2 class="modal__title">New post</h2>
-          <form class="modal__form">
-            <label for="card-image-input" class="modal__label">
-              Image Link
-              <input
-                id="card-image-input"
-                type="url"
-                class="modal__input"
-                placeholder="Past a link to the picture"
-              />
-            </label>
-            <label for="card-caption-input" class="modal__label">
-              Caption
-              <input
-                id="card-caption-input"
-                type="text"
-                class="modal__input"
-                placeholder="Type your caption"
-              />
-            </label>
-            <button class="modal__submit-btn" type="submit">Save</button>
-          </form>
-        </div>
+      <div class="modal modal_type_preview" id="preview-modal"> 
+        <div class="modal__image-container">
+          <button 
+          type="button"
+          aria-label="close modal"
+          class="modal__close modal__close_type_preview"
+          ></button>
+          <img 
+          src="#" 
+          alt=" " 
+          class="modal__image"
+          />
+          <p class="modal__caption"></p>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>
