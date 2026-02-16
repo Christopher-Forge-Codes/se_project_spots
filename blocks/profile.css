@@ -41,7 +41,7 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
-  font-family: Popins, sans-serif;
+  font-family: Poppins, sans-serif;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -77,14 +77,14 @@
   cursor: pointer;
 }
 
-.profile__edit-button:hover {
+.profile__edit-btn:hover {
   opacity: 100%;
 }
 
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
-    max-width: 282px;
+    max-width: 260px;
     align-items: center;
     text-align: center;
     padding-top: 20px;
