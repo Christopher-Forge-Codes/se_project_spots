@@ -105,7 +105,7 @@
 
       <form class="modal__form" name="edit-profile-form">
 
-        <label class="modal__label">
+        <label for="profile-name-input" class="modal__label">
           Name
           <input
             id="profile-name-input"
@@ -116,7 +116,7 @@
           />
         </label>
 
-        <label class="modal__label">
+        <label for="profile-description-input" class="modal__label">
           Description
           <input
             id="profile-description-input"
@@ -143,6 +143,7 @@
 
       <form class="modal__form" name="new-post-form">
 
+      <label for="post-title-input" class="modal__label">
         <input
           type="text"
           id="post-title-input"
@@ -150,7 +151,9 @@
           placeholder="Title"
           required
         />
+        </label>
 
+      <label for="post-image-input" class="modal__label">
         <input
           type="url"
           id="post-image-input"
@@ -158,6 +161,7 @@
           placeholder="Image URL"
           required
         />
+        </label>
 
         <button type="submit" class="modal__submit-btn">
           Create
@@ -167,10 +171,10 @@
     </div>
   </div>
 
-  <div class="modal" id="preview-modal">
+  <div class="modal modal_type_preview" id="preview-modal">
     <div class="modal__image-container">
-      <button type="button" class="modal__close-btn"></button>
-      <img class="modal__image" src="" alt="">
+      <button type="button" class="modal__close-btn modal__close_type_preview"></button>
+      <img class="modal__image" src="#" alt="">
       <p class="modal__caption"></p>
     </div>
   </div>
