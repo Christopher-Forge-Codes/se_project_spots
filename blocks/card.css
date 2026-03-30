@@ -32,10 +32,21 @@
   cursor: pointer;
 }
 
+.card__like-button_active {
+  background-image: url(../images/DarkHeart.svg);
+  opacity: 1;
+}
+
 .card__like-button_:hover {
   background-image: url(../images/lightheart.svg);
   opacity: 1;
 }
+
+
+.card__like-button_active:hover {
+  opacity: 0.4;
+}
+
 
 .card__delete-button {
   background-image: url(../images/lightdelete.svg);
@@ -54,14 +65,6 @@
   opacity: 1;
 }
 
-.card__like-button_active:hover {
-  opacity: 0.5;
-}
-
-.card__like-button_active {
-  background-image: url(../images/Activeheart.svg);
-  opacity: 1;
-}
 
 .card__title {
   margin: 0;

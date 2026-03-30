@@ -49,7 +49,7 @@
 
         <section class="cards page__section">
           <ul class="cards__list">
-            <template id="card-template">
+              <template id="card-template">
               <li class="card">
                 <button class="card__delete-button" type="button"></button>
 
@@ -109,50 +109,55 @@
       </div>
     </div>
 
-    <div class="modal" id="new-post-modal">
-      <div class="modal__container">
-        <button type="button" class="modal__close-btn"></button>
-
-        <h2 class="modal__title">New Post</h2>
-
-        <form class="modal__form" name="new-post-form">
-          <label for="post-title-input" class="modal__label">
-            Title
-            <input
-              type="text"
-              id="post-title-input"
-              class="modal__input"
-              placeholder="Title"
-              required
-            />
-          </label>
-
-          <label for="post-image-input" class="modal__label">
-            Image
-            <input
-              type="url"
-              id="post-image-input"
-              class="modal__input"
-              placeholder="Image URL"
-              required
-            />
-          </label>
-
-          <button type="submit" class="modal__submit-btn">Create</button>
-        </form>
-      </div>
-    </div>
-
     <div class="modal modal_type_preview" id="preview-modal">
       <div class="modal__image-container">
-        <button
-          type="button"
-          class="modal__close-btn modal__close_type_preview"
+        <button 
+        type="button" 
+        class="modal__close-btn modal__close_type_preview"
         ></button>
+        
         <img class="modal__image" src="#" alt="" />
         <p class="modal__caption"></p>
       </div>
     </div>
+
+    <div class="modal" id="new-post-modal">
+  <div class="modal__container">
+    <button type="button" class="modal__close-btn"></button>
+
+    <h2 class="modal__title">New Post</h2>
+
+    <form class="modal__form" name="new-post-form">
+      
+      <label class="modal__label">
+        Title
+        <input
+          id="post-title-input"
+          type="text"
+          class="modal__input"
+          placeholder="Enter title"
+          required
+        />
+      </label>
+
+      <label class="modal__label">
+        Image URL
+        <input
+          id="post-image-input"
+          type="url"
+          class="modal__input"
+          placeholder="Enter image URL"
+          required
+        />
+      </label>
+
+      <button type="submit" class="modal__submit-btn">
+        Create
+      </button>
+
+    </form>
+  </div>
+</div>
 
     <script src="./scripts/index.js" defer></script>
   </body>
