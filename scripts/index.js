@@ -130,15 +130,21 @@ function handleNewPostSubmit(evt) {
     evt.preventDefault();
 
     const inputValues = {
-        name: newPostCaptionInput.value,
+        name: newPostCaptionInput.value, 
         link: newPostImageLink.value,
     };
 
     const cardElement = getCardElement(inputValues);
     cardsList.prepend(cardElement);
 
-    newPostForm.reset();
-    closeModal(newPostModal);
+   newPostForm.reset();
+
+const inputList = Array.from(newPostForm.querySelectorAll(settings.inputSelector));
+const buttonElement = newPostForm.querySelector(settings.submitButtonSelector);
+
+toggleButtonState(inputList, buttonElement);
+
+closeModal(newPostModal);
 }
 
 
