@@ -16,5 +16,8 @@
 **Deployment**
 
 My webpage is deployed via GitHub!
-
-* Deployment link: (https://christopher-forge-codes.github.io/se_project_spots/)
+ ## Project Pitch Video
+ 
+ Check out [this video](ADD_LINK_HERE), where I describe my 
+ project and some challenges I faced while building it.
+https://drive.google.com/file/d/13c_Te1ZpYxTM5Ytn_E_vAkjj4klcdrpC/view?usp=sharing
