@@ -28,16 +28,16 @@
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
-  opacity: 40%;
+  opacity: 0.4;
   cursor: pointer;
 }
 
 .card__like-button_active {
-  background-image: url(../images/DarkHeart.svg);
+  background-image: url(../images/darkheart.svg);
   opacity: 1;
 }
 
-.card__like-button_:hover {
+.card__like-button:hover {
   background-image: url(../images/lightheart.svg);
   opacity: 1;
 }
