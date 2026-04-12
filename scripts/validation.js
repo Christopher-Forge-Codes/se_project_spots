@@ -39,12 +39,24 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+function resetValidation(formEl, config) {
+  const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+  
+  inputList.forEach((inputElement) => {
+    hideInputError(formEl, inputElement, config);
+  });
+  
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+  toggleButtonState(inputList, buttonElement, config);
+}
+
+
+const toggleButtonState = (inputList, buttonElement, config) => {
   const isInvalid = hasInvalidInput(inputList);
 
   buttonElement.disabled = isInvalid;
   buttonElement.classList.toggle(
-    "modal__submit-btn_disabled",
+    config.inactiveButtonClass,
     isInvalid
   );
 };

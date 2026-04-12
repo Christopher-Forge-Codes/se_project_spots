@@ -12,7 +12,7 @@
   padding: 10px;
   font-family: poppins, sans-serif;
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s, ease-in;
+  transition: visibility 0.3s, opacity 0.3s, ease-in;
 }
 
 .modal_type_preview {
@@ -108,7 +108,7 @@
   background-color: #212121;
 }
 
-.modal__close_type_preview {
+.modal__close-btn_type_preview {
   top: 0;
   right: -52.5px;
   background-image: url(../images/WhiteX.svg);
@@ -176,9 +176,9 @@
   display: block;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 320px) {
   .modal__container {
-    padding: 22px 12px 12px;
+    padding: 16px;
   }
 
   .modal__title {
@@ -186,7 +186,7 @@
   }
 
   .modal__close-btn {
-    top: 22px;
+    top: 12px;
     right: 12px;
   }
 

@@ -88,17 +88,46 @@ function getCardElement(data) {
 
 const cardsList = document.querySelector(".cards__list");
 
-function openModal(modal) { 
+initialCards.forEach((cardData) => {
+  const cardElement = getCardElement(cardData);
+  cardsList.append(cardElement);
+});
+
+const handleEscClose = (evt) => {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_is-opened");
+    if (modal) {
+      closeModal(modal);
+    }
+  }
+};
+
+const handleOverlayClick = (evt) => {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
+  }
+};
+
+function openModal(modal) {
   modal.classList.add("modal_is-opened");
-}
+
+  document.addEventListener("keydown", handleEscClose);
+  modal.addEventListener("click", handleOverlayClick);
+};
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-} 
+
+  document.removeEventListener("keydown", handleEscClose);
+  modal.removeEventListener("click", handleOverlayClick);
+};
 
 editProfileBtn.addEventListener("click", function () {
     editProfileNameInput.value = profileNameEl.textContent.trim();
     editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
+
+    resetValidation(editProfileForm, settings);
+
     openModal(editProfileModal);
 });
 
@@ -107,6 +136,7 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
+    resetValidation(newPostForm, settings);
     openModal(newPostModal);
 });
 
@@ -118,13 +148,13 @@ previewModalCloseButton.addEventListener("click", function () {
   closeModal(previewModal);
 });
 
-
 function handleEditProfileSubmit(evt) {
     evt.preventDefault();
     profileNameEl.textContent = editProfileNameInput.value.trim();
     profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
+    
     closeModal(editProfileModal);
-}
+};
 
 function handleNewPostSubmit(evt) {
     evt.preventDefault();
@@ -142,16 +172,5 @@ function handleNewPostSubmit(evt) {
 const inputList = Array.from(newPostForm.querySelectorAll(settings.inputSelector));
 const buttonElement = newPostForm.querySelector(settings.submitButtonSelector);
 
-toggleButtonState(inputList, buttonElement);
-
 closeModal(newPostModal);
-}
-
-
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-newPostForm.addEventListener("submit", handleNewPostSubmit);
-
-initialCards.forEach (function (item) {
-const card = getCardElement(item);
-cardsList.append(card);
-}); 
+};
