@@ -1,32 +1,32 @@
 const initialCards = [
-{
+  {
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-},
- {
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-},
-{
+  },
+  {
     name: "Restaurant terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-},
-{
+  },
+  {
     name: "An outdoor cafe",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-},
-{
+  },
+  {
     name: "A very long bridge, over the forest and through the trees",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-},
-{
+  },
+  {
     name: "Tunnel with morning light",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-},
-{
+  },
+  {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-},
+  },
 ];
 
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -42,7 +42,6 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostImageLink = newPostModal.querySelector("#post-image-input");
 const newPostCaptionInput = newPostModal.querySelector("#post-title-input");
 
-
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 const previewModal = document.querySelector("#preview-modal");
@@ -54,7 +53,6 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
-
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -113,35 +111,39 @@ function openModal(modal) {
 
   document.addEventListener("keydown", handleEscClose);
   modal.addEventListener("click", handleOverlayClick);
-};
+
+  if (modal === editProfileModal) {
+    resetValidation(editProfileForm, settings);
+  }
+}
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 
   document.removeEventListener("keydown", handleEscClose);
   modal.removeEventListener("click", handleOverlayClick);
-};
+}
 
 editProfileBtn.addEventListener("click", function () {
-    editProfileNameInput.value = profileNameEl.textContent.trim();
-    editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
+  editProfileNameInput.value = profileNameEl.textContent.trim();
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent.trim();
 
-    resetValidation(editProfileForm, settings);
+  resetValidation(editProfileForm, settings);
 
-    openModal(editProfileModal);
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-    closeModal(editProfileModal);
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
-    resetValidation(newPostForm, settings);
-    openModal(newPostModal);
+  resetValidation(newPostForm, settings);
+  openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-    closeModal(newPostModal);
+  closeModal(newPostModal);
 });
 
 previewModalCloseButton.addEventListener("click", function () {
@@ -149,28 +151,32 @@ previewModalCloseButton.addEventListener("click", function () {
 });
 
 function handleEditProfileSubmit(evt) {
-    evt.preventDefault();
-    profileNameEl.textContent = editProfileNameInput.value.trim();
-    profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
-    
-    closeModal(editProfileModal);
-};
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value.trim();
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value.trim();
+
+  closeModal(editProfileModal);
+}
 
 function handleNewPostSubmit(evt) {
-    evt.preventDefault();
+  evt.preventDefault();
 
-    const inputValues = {
-        name: newPostCaptionInput.value, 
-        link: newPostImageLink.value,
-    };
+  const inputValues = {
+    name: newPostCaptionInput.value,
+    link: newPostImageLink.value,
+  };
 
-    const cardElement = getCardElement(inputValues);
-    cardsList.prepend(cardElement);
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
 
-   newPostForm.reset();
+  newPostForm.reset();
 
-const inputList = Array.from(newPostForm.querySelectorAll(settings.inputSelector));
-const buttonElement = newPostForm.querySelector(settings.submitButtonSelector);
+  const inputList = Array.from(
+    newPostForm.querySelectorAll(settings.inputSelector),
+  );
+  const buttonElement = newPostForm.querySelector(
+    settings.submitButtonSelector,
+  );
 
-closeModal(newPostModal);
-};
+  closeModal(newPostModal);
+}

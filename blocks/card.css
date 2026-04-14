@@ -42,11 +42,9 @@
   opacity: 1;
 }
 
-
 .card__like-button_active:hover {
   opacity: 0.4;
 }
-
 
 .card__delete-button {
   background-image: url(../images/lightdelete.svg);
@@ -64,7 +62,6 @@
   background-image: url(../images/hoverdelete.svg);
   opacity: 1;
 }
-
 
 .card__title {
   margin: 0;
