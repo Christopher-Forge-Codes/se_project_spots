@@ -178,5 +178,10 @@ function handleNewPostSubmit(evt) {
     settings.submitButtonSelector,
   );
 
+  toggleButtonState(inputList, buttonElement, settings);
+
   closeModal(newPostModal);
-}
+};
+
+ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+  newPostForm.addEventListener("submit", handleNewPostSubmit);

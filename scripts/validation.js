@@ -59,7 +59,7 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   const isInvalid = hasInvalidInput(inputList);
 
   buttonElement.disabled = isInvalid;
-  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.classList.toggle(config.inactiveButtonClass, isInvalid);
 };
 
 const setEventListeners = (formEl, config) => {
@@ -71,21 +71,17 @@ const setEventListeners = (formEl, config) => {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       checkInputValidity(formEl, inputElement, config);
-      toggleButtonState(inputList, buttonElement);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
-
-  formEl.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-  });
 };
 
-const enableValidation = (config) => {
-  const formList = document.querySelectorAll(config.formSelector);
+  const enableValidation = (config) => {
+    const formList = document.querySelectorAll(config.formSelector);
 
-  formList.forEach((formEl) => {
-    setEventListeners(formEl, config);
-  });
-};
+    formList.forEach((formEl) => {
+      setEventListeners(formEl, config);
+    });
+  };
 
-enableValidation(settings);
+  enableValidation(settings);
