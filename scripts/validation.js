@@ -77,11 +77,11 @@ const setEventListeners = (formEl, config) => {
 
   formEl.addEventListener("submit", (evt) => {
     evt.preventDefault();
-  }
+  });
+};
 
 const enableValidation = (config) => {
   const formList = document.querySelectorAll(config.formSelector);
-};
 
   formList.forEach((formEl) => {
     setEventListeners(formEl, config);
